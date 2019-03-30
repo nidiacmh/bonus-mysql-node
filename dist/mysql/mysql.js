@@ -18,7 +18,7 @@ class MySQL {
         return this._instance || (this._instance = new this());
     }
     static ejecutarQuery(query, callback) {
-        this.instance.cnn.query(query, (err, results, fields) => {
+        this.instance.cnn.query(query, (err, results) => {
             if (err) {
                 console.log('Error en query');
                 console.log(err);

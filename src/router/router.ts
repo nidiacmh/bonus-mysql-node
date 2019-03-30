@@ -23,7 +23,7 @@ router.get('/heroes', (req: Request, res: Response) =>{
 
 });
 
-router.get('/heroe/id', (req: Request, res: Response) =>{
+router.get('/heroe/:id', (req: Request, res: Response) =>{
 
   const id = req.params.id;
   const escapeId = MySQL.instance.cnn.escape(id)
@@ -35,12 +35,11 @@ router.get('/heroe/id', (req: Request, res: Response) =>{
       res.status(400).json({
         ok: false,
         error: err
-
       });
     }else{
       res.json({
         ok: true,
-        heros: heroe[0]
+        heroe: heroe[0]
       });
     }
   });

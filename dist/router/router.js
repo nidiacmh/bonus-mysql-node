@@ -23,7 +23,7 @@ router.get('/heroes', (req, res) => {
         }
     });
 });
-router.get('/heroe/id', (req, res) => {
+router.get('/heroe/:id', (req, res) => {
     const id = req.params.id;
     const escapeId = mysql_1.default.instance.cnn.escape(id);
     const query = `SELECT * FROM heroes where id= ${escapeId};`;
@@ -37,7 +37,7 @@ router.get('/heroe/id', (req, res) => {
         else {
             res.json({
                 ok: true,
-                heros: heroe[0]
+                heroe: heroe[0]
             });
         }
     });
