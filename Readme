@@ -1,0 +1,4 @@
+Recuerda usar
+`npm install`
+
+Esta app muestra como se puede conectar mysql con node y usa el primer query del crud,
